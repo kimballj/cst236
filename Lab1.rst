@@ -270,14 +270,115 @@ every commit contains working unittests.
 Documenting using Sphinx
 ========================
 
+Sphinx documentation utilizes inline documentation (function comments see get_triangle_type for example) and
+ReStructured Text to create end user documentation. This allows the code changes to automatically be updated in
+the resulting code.
+
+I've included a template for documenting the source1.py file in the doc folder. This can be built using the following
+
+.. code::
+
+    cd doc
+    make html
+
+This will create an index.html in build/html. View this file to get an idea of what this looks like.
+
+** Now build a rst doc for the source file for four sided objects that was created earlier **
+
+.. note::
+
+    Don't forget to add your new rst file to the index to make it accessible
+
+
 Creating DocTests
 =================
+
+Sphinx doctests are useful in that they allow you to embedded checks in code or RST files that checks that changes
+to the code are updated in the associated documentation. Imagine the case where you have some defined API but then
+you change some of the parameters. If the associated documentation is not updated you'll have a very unhappy customer.
+
+This is where doctests come into play. Doctests provide a check and doctests also get printed to the html output.
+There are two ways to include doc tests
+
+Simple doctests
+^^^^^^^^^^^^^^^
+
+The simplest method of including a doctest is using the ">>>" operator. For example:
+
+.. code::
+
+    >>> x = 1
+    >>> y = 2
+    >>> print x + y
+    3
+
+In the above example the code will be displayed exactly how it is included in the comment or RST.
+
+Complex doctests
+^^^^^^^^^^^^^^^^
+
+Complex doc tests split up tests into 3 - 4 different groups.
+* Test setups: provide a set of code to execute before the test specified (does not show up in html)
+* Test code: The actual test that gets executed (shows up in HTML)
+* Test output: The expected output from executing the test code (shows up in HTML)
+* Test cleanup: Steps to take after a test to cleanup after the test (does not show up in html)
+
+Example:
+
+.. code::
+
+    .. testsetup:: *
+
+        x = 1
+        y = 2
+
+    .. testcode:: addition
+
+        print x + y
+
+    .. testoutput:: addition
+
+        3
+
+In the above example by indicating '*' for the test setup we are indicating that this setup should be performed for
+every testcode block in the file. If we changes that to 'addition' the test setup will only be performed
+prior to for the addition testcode.
+
+Executing doctests
+^^^^^^^^^^^^^^^^^^
+
+By using the same make as building the html doc above we can execute doctests by running:
+
+.. code::
+
+    make doctest
+
+** Now create doctests for using both simple and complex doctests. **
+
+Continuous Integration
+======================
+
+Since testing that has only been executed on a single computer can fail to reveal flaws in both the source code
+and the tests. Tests and results which are not consistent and reproducible are useful. Plus how will we be able to
+detect the next time that Gaben breaks the build again?
+
+#. Go to Drone.IO_
+#. Register Drone IO with your github account.
+#. Connect Drone to build your nose2 and doctests.
+#. Setup drone to build the nose2 and doctests the same way you built them locally.
+
+* You will want to make sure this will build each branch. This means drone will build each of your builds
+* This is a good way to make sure that your tests will work on my computer
+* This also ensures that your requirements.txt is correct
+
+.. _Drone.IO: http://drone.io
+
 
 Lab Write-up
 ============
 
-Each of the following questions must be copied to your lab write-up and made into section headers. Any code responses provided must 
-utilize rst code block format. Likewise bullet and number lists must follow the same syntax.
+Each of the following questions must be copied to your lab write-up and made into section headers. Any code responses
+ must utilize rst code block format. Likewise bullet and number lists must follow the same syntax.
 
 #. What was the hardest part of this lab?
 #. During the course of this lab, why did we exclude .pyc files?
@@ -289,5 +390,5 @@ utilize rst code block format. Likewise bullet and number lists must follow the 
 
 .. note::
 
-    Please ensure all your work is committed and pushed to your Lab 1 branch. Now email me the address to your repo.
-    looking on github is a good way to check that I will be able to see all your work.
+    Please ensure all your work is committed and pushed to your Lab 1 branch. Now email me the address to your repo and
+    drone.io job. Looking on github is a good way to check that I will be able to see all your work.
