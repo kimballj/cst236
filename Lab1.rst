@@ -1,6 +1,9 @@
 Welcome to CST 236 Lab 1
 ------------------------
 
+**If you have not already done so. Ensure you have completed the instructions
+on blackboard.**
+
 Getting Python Setup
 ====================
 
