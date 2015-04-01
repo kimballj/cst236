@@ -188,7 +188,7 @@ Now that you have fixed the broken test lets see what the coverage looks like. E
 * This will generate an html report for the coverage results in htmlcov/index.html.
 * If you look at this file the coverage is currently including the tests in the results. 
 
-#. Lets automatically run for coverage by adding the following to nose2.cfg:
+#. Lets automatically run for coverage by adding the following to nose2.cfg (without spaces or tabs before the lines):
 
     .. code::
    
