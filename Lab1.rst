@@ -323,6 +323,12 @@ functionality to so that all my tests can reuse my custom comparisons. For examp
 could create something like:
 unittest.TestCase => ProjectBaseTest => SpecificTestCaseClass.
 
+Finally, there are a number of functions in TestCase that can be overwritten to aid in testing. 
+The major functions most commonly overwritten is:
+
+* setUp: called before each test function. Useful when there is some operation that needs to occur before each test
+* tearDown: called after each test function executes. Useful if there is some cleanup that needs to occur after each function
+
 Running your first Nose2 Test
 *****************************
 To ensure proper setup I have included a test case that you may use as a guide
