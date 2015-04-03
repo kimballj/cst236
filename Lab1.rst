@@ -20,7 +20,7 @@ Getting Python Setup
 
 #. If you don't already have python 2.7.8 download and install it now
 #. Ensure "C:\python27;C:\python27\scripts;C:\python27\lib\site-packages" is in your env path variable
-#. Open a command prompt to the root of the CST236 repo and run "python install get-pip.py"
+#. Open a command prompt to the root of the CST236 repo and run "python get-pip.py"
 #. pip (python installation package) manages extra modules not included in standard python
 #. Run "pip install -r requirements.txt". 
 
