@@ -323,12 +323,6 @@ functionality to so that all my tests can reuse my custom comparisons. For examp
 could create something like:
 unittest.TestCase => ProjectBaseTest => SpecificTestCaseClass.
 
-Finally, there are a number of functions in TestCase that can be overwritten to aid in testing. 
-The major functions most commonly overwritten is:
-
-* setUp: called before each test function. Useful when there is some operation that needs to occur before each test
-* tearDown: called after each test function executes. Useful if there is some cleanup that needs to occur after each function
-
 Running your first Nose2 Test
 *****************************
 To ensure proper setup I have included a test case that you may use as a guide
@@ -391,20 +385,42 @@ Sphinx documentation utilizes in line documentation (function comments see get_t
 ReStructured Text to create end user documentation. This allows the code changes to automatically be updated in
 the resulting code.
 
-I've included a template for documenting the source1.py file in the doc folder. This can be built using the following
+I've included a template (using sphinx-quickstart - walkthrough setup for sphinx builds) for documenting the source1.py 
+file in the doc folder. 
+
+This can be built using the following
 
 .. code::
 
     cd doc
     make html
 
-This will create an index.html in build/html. View this file to get an idea of what this looks like.
+This will create an Lab1.html in build/html. View this file to get an idea of what this looks like.
+
+By executing make html we are invoking the html portion of of make.bat, which
+simplifies all the parameters required for a sphinx build. The specific settings for the build can be seen in
+source/conf.py. For this lab you should not need to modify any of these settings. 
+
+The html pages exist as a one to one relationship with the rst files in the doc/source folder. Lab1.rst is considered the 
+main landing page for the documentation. If you open doc/source/Lab1.rst you will see the following code:
+
+.. code::
+    .. toctree::
+       :maxdepth: 2
+
+       code/source1.rst
+       
+This references and creates a link to the source1.rst (which contains the code provided in the sample).
+
+Looking at doc/source/code/source1.rst you will notice I've created three sections indicated by the '^' 
+underline header. The first provides an explaination, the second provides a code example (using the >>> indicator) 
+and the third is an autodoc of the source file (Using the definitions and inline documentation).
 
 ** Now build a rst doc for the source file for four sided objects that was created earlier **
 
 .. note::
 
-    Don't forget to add your new rst file to the index to make it accessible
+    Don't forget to add your new rst file to the doc/source/Lab1.rst to make it accessible
 
 
 Creating DocTests
@@ -482,7 +498,7 @@ detect the next time that Gaben breaks the build again?
 #. Go to Drone.IO_
 #. Register Drone IO with your github account.
 #. Connect Drone to build your nose2 and doctests.
-#. Setup drone to build the nose2 and doctests the same way you built them locally.
+#. Setup drone to build the nose2 and doctests the same way you built them locally (don't forget to include your requirements.txt)
 
 * You will want to make sure this will build each branch. This means drone will build each of your builds
 * This is a good way to make sure that your tests will work on my computer
