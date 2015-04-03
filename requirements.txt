@@ -3,4 +3,4 @@ coverage
 mock
 sphinx
 docutils
-nose2-cov
+nose2-cov==1.0a4
