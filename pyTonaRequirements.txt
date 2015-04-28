@@ -8,7 +8,7 @@
 
 #0004 If the system does not detect a question mark at end of the string it shall return "Was that a question?"
 
-A question mark is defined as ascii value 0x3E
+A question mark is defined as ascii value 0x3F
 
 **Determining Answers**
 
@@ -44,8 +44,6 @@ A question mark is defined as ascii value 0x3E
 
 #0017 The system shall respond to the question "What is <float> feet in miles" with the the float value divided by 5280 and append "miles" to the end of  the return.
 
-#0018 The system shall respond to the question "How many seconds since <date time>" with the number of seconds from that point of day till now.
-
 #0019 The system shall respond to the question "Who invented Python" with "Guido Rossum(BFDL)"
 
 #0020 The system shall respond to the question "Why don't you understand me" with "Because you do not speak 1s and 0s"
@@ -54,3 +52,18 @@ A question mark is defined as ascii value 0x3E
 
 Username shall be determined by the name of the currently logged in user.
 
+#0022 The system shall respond to the question "Where am I" with the local git branch name or "unknown" if it can't be determined
+
+#0023 The system shall respond to the question "Where are you" with the URL for the git repo or "unknown" if it can't be determined
+
+#0024 The system shall respond to the question "Who else is here" with a list of users
+
+#0025 When determining users the system shall connect to the server at ip address 192.168.64.3 port 1337 and sending a message "Who?"
+
+#0026 If a response is received from the server the user list shall be parsed from a "$" seperated list of users
+
+#0027 If no response is received from the server the system shall return "IT'S A TRAAAPPPP"
+
+#0028 The system shall respond to the question "What is the <int> digit of the Fibonacci sequence?" with the correct number from the fibonnacci sequence if the number has been found
+
+#0029 If the system has not determined the requested digit of the Fibonacci sequence it will respond with A)"Thinking...", B)"One second" or C)"cool your jets" based on a randomly generated number (A is 60% chance, B is 30% chance, C is 10% chance)
