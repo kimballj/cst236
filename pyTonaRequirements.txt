@@ -44,7 +44,7 @@ A question mark is defined as ascii value 0x3F
 
 #0017 The system shall respond to the question "What is <float> feet in miles" with the the float value divided by 5280 and append "miles" to the end of  the return.
 
-#0019 The system shall respond to the question "Who invented Python" with "Guido Rossum(BFDL)"
+#0019 The system shall respond to the question "Who invented Python" with "Guido Rossum(BDFL)"
 
 #0020 The system shall respond to the question "Why don't you understand me" with "Because you do not speak 1s and 0s"
 
@@ -67,3 +67,15 @@ Username shall be determined by the name of the currently logged in user.
 #0028 The system shall respond to the question "What is the <int> digit of the Fibonacci sequence?" with the correct number from the fibonnacci sequence if the number has been found
 
 #0029 If the system has not determined the requested digit of the Fibonacci sequence it will respond with A)"Thinking...", B)"One second" or C)"cool your jets" based on a randomly generated number (A is 60% chance, B is 30% chance, C is 10% chance)
+
+**Performance Requirements**
+
+#0030 The system shall be capable of storing at least 1,000,000 questions and answers
+
+#0031 The system shall store answers in under 5 ms
+
+#0032 The system shall be able to retrieve a response in under 5 ms 
+
+#0033 The system shall stop generating Fibonacci sequence numbers once it has identified the first 1,000 numbers
+
+#0034 The system shall generate the first 1,000 Fibonacci sequence numbers in under 45 seconds

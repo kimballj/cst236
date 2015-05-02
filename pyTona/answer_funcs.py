@@ -38,7 +38,7 @@ def get_git_url():
 def get_other_users():
     try:
         host = '192.168.64.3'
-        port = '1337'
+        port = 1337
 
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         s.connect((host, port))
@@ -61,9 +61,11 @@ class FibSeqFinder(threading.Thread):
         self._stop.set()
 
     def run(self):
-        while not self._stop.isSet():
+        num_indexes = 0
+        while not self._stop.isSet() and num_indexes <= 1000:
+            num_indexes += 1
             self.sequence.append(self.sequence[-1] + self.sequence[-2])
-            time.sleep(1.00)
+            time.sleep(.04)
 
 def get_fibonacci_seq(index):
     index = int(index)
