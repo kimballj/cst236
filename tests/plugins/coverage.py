@@ -36,6 +36,7 @@ class Coverage(Plugin):
         self.conSource = self.config.as_list('coverage', [])
         self.conReport = self.config.as_list('coverage-report', [])
         self.conConfig = self.config.as_str('coverage-config', '').strip()
+        self.covSource = self.config.as_str('coverage-source', '').strip()
 
         group = self.session.pluginargs
         group.add_argument(

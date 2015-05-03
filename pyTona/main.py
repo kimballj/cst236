@@ -46,7 +46,7 @@ class Interface(object):
                     args.append(float(keyword))
                 except:
                     parsed_question += "{0} ".format(keyword)
-            parsed_question = parsed_question[0:-2]
+            parsed_question = parsed_question[0:-1]
             self.last_question = parsed_question
             for answer in self.question_answers.values():
                 if difflib.SequenceMatcher(a=answer.question, b=parsed_question).ratio() >= .90:

@@ -55,5 +55,6 @@ Analysis Questions
 #. What was the hardest part of this lab?
 #. What is the difference between performance testing and performance measurement?
 #. What new bugs did you encounter with the new code?
+#. Did you mock anything to speed up performance testing? Do you see any issues with this?
 #. Generate at least 5 performance measurement value sets and graphs (these sets must be worthwhile)
-#. How long did this graph take to accomplish?
+#. How long did this lab take to accomplish?
