@@ -44,7 +44,7 @@ A question mark is defined as ascii value 0x3F
 
 #0017 The system shall respond to the question "What is <float> feet in miles" with the the float value divided by 5280 and append "miles" to the end of  the return.
 
-#0019 The system shall respond to the question "Who invented Python" with "Guido Rossum(BFDL)"
+#0019 The system shall respond to the question "Who invented Python" with "Guido Rossum(BDFL)"
 
 #0020 The system shall respond to the question "Why don't you understand me" with "Because you do not speak 1s and 0s"
 
