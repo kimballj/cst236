@@ -37,16 +37,19 @@ Steps
 #. Add performance tests for additional requirements
 #. Add four new answers (3 must be thread based, the fourth involves harddrive access)
 #. Add new performance requirements for functionality
-#. Ensure test all pass and work on drone.io
+#. Ensure tests all pass and work on drone.io
 #. For 5 of the performance tests output performance numbers in some format (CSV might be easiest to graph)
 
 .. note:: 
 
-    When developing tests you must consider all the concepts we discussed during lecture. 
+    When developing tests you must consider all the concepts we discussed during lecture and demonstrate you understand
+    how to use them.
     Load Testing
     Stress Testing
-    Performance Measurement
-    etc
+    Endurance Testing
+    Spike Testing
+    Configuration Testing
+    Isolation Testing
     
 
 Analysis Questions
@@ -57,4 +60,5 @@ Analysis Questions
 #. What new bugs did you encounter with the new code?
 #. Did you mock anything to speed up performance testing? Do you see any issues with this?
 #. Generate at least 5 performance measurement value sets and graphs (these sets must be worthwhile)
+#. Explain Load Testing, stress testing, endurance testing, spike testing configuration testing and isolation testing. How did you implement each of these?
 #. How long did this lab take to accomplish?

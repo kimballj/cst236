@@ -8,7 +8,7 @@
 
 #0004 If the system does not detect a question mark at end of the string it shall return "Was that a question?"
 
-A question mark is defined as ascii value 0x3F
+A question mark is defined as ASCII value 0x3F
 
 **Determining Answers**
 
@@ -52,9 +52,9 @@ A question mark is defined as ascii value 0x3F
 
 Username shall be determined by the name of the currently logged in user.
 
-#0022 The system shall respond to the question "Where am I" with the local git branch name or "unknown" if it can't be determined
+#0022 The system shall respond to the question "Where am I" with the local git branch name or "Unknown" if it can't be determined
 
-#0023 The system shall respond to the question "Where are you" with the URL for the git repo or "unknown" if it can't be determined
+#0023 The system shall respond to the question "Where are you" with the URL for the git repo or "Unknown" if it can't be determined
 
 #0024 The system shall respond to the question "Who else is here" with a list of users
 
