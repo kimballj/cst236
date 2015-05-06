@@ -78,9 +78,9 @@ def get_fibonacci_seq(index):
 
     if index > seq_finder.num_indexes:
         value = random.randint(0, 9)
-        if value > 4:
+        if value >= 4:
             return "Thinking..."
-        elif value => 1:
+        elif value > 1:
             return "One second"
         else:
             return "cool your jets"
