@@ -63,7 +63,7 @@ class FibSeqFinder(threading.Thread):
 
     def run(self):
         self.num_indexes = 0
-        while not self._stop.isSet() and self.num_indexes <= 1000:
+        while not self._stop.isSet() and self.num_indexes < 1000:
             self.sequence.append(self.sequence[-1] + self.sequence[-2])
             self.num_indexes += 1
             time.sleep(.04)
